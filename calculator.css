@@ -1,0 +1,300 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #e7f5ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+/* Main Title Styling */
+.main-title {
+    font-size: 28px; /* Adjusted size for nav */
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin: 0 20px; /* Space around the title */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center vertically */
+    position: relative; /* For positioning */
+    z-index: 100; /* Ensure it appears above other elements */
+}
+.menu-links{
+    padding-right: 30px;
+}
+.menu-links li {
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px;
+}
+.menu-links li:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+/* Navigation Links */
+.nav-bar ul {
+    display: flex; /* Align links horizontally */
+    list-style: none; /* Remove bullets */
+    margin-left: auto; /* Push links to the right */
+    gap: 10px;
+    text-align: center;
+}
+
+.nav-bar li {
+    margin: 0 15px; /* Space between links */
+}
+
+.nav-bar .a1 {
+    color: rgba(20, 15, 87, 0.475);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-bar .a1:hover {
+    color: #052dc0; /* Change color on hover */
+}
+/* Off-screen menu styling */
+.off-screen-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen initially */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(2, 3, 5, 0.471); /* Blue tint for visibility */
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 20px;
+    z-index: 100; /* Ensure menu is above other elements */
+}
+
+/* Off-screen menu list */
+.off-screen-menu ul {
+    list-style: none; /* Remove bullets */
+    width: 100%; /* Full width */
+}
+
+/* Off-screen menu list items */
+.off-screen-menu li {
+    margin: 15px 0; /* Space between items */
+    width: 100%; /* Full width for clickable area */
+    text-align: left; /* Align text to the left */
+}
+/* Link styles */
+.a1 {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding: 10px; /* Add padding for better touch targets */
+    display: block; /* Make link fill the list item */
+}
+
+.a1:hover {
+    color: #052dc0; /* Change color on hover */
+}
+
+.a2 {
+    color: #0b243f ;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    display: block; /* Make link fill the list item */
+}
+
+.a2:hover {
+    color: whitesmoke; /* Change color on hover */
+}
+/* Hamburger menu styling */
+.ham-menu {
+    display: block; /* Show hamburger menu by default */
+    cursor: pointer;
+    z-index: 300; /* Higher than menu to stay on top */
+    position: relative;
+    background-color: rgba(242, 242, 248, 0); /* Red tint for visibility */
+}
+
+/* Hamburger icon styling */
+.ham-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Menu active state */
+.menu-active {
+    left: 0; /* Slide the menu into view */
+    z-index: 150;
+}
+/* Cross (hamburger icon active state) */
+.ham-active span:nth-child(1) {
+    opacity: 0;
+}
+.ham-active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-active span:nth-child(3) {
+    opacity: 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+/* Header */
+.header {
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust the logo */
+.logo {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+}
+
+/* Optional: Centering the header text */
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+
+/* Calculator Section */
+.calculator {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calculator h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+.hidden {
+    display: none;
+}
+
+#result-container {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Media Query for smaller screens */
+@media (max-width: 1499px) {
+    .nav-bar ul {
+        display: none; /* Hide menu items on smaller screens */
+    }
+
+    .ham-menu {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+/* Media Query for larger screens */
+@media (min-width: 1500px) {
+    .off-screen-menu {
+        display: none; /* Ensure off-screen menu is hidden */
+    }
+
+    .ham-menu {
+        display: none; /* Hide the hamburger icon */
+    }
+
+    .nav-bar ul {
+        display: flex; /* Show nav links horizontally */
+    }
+}

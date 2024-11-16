@@ -1,0 +1,280 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* Resetting styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Main Title Styling */
+.main-title {
+    font-size: 28px; /* Adjusted size for nav */
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin: 0 20px; /* Space around the title */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center vertically */
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    padding: 10px; /* Padding for aesthetics */
+    position: sticky; /* For positioning */
+    top: 0;
+    z-index: 100; /* Ensure it appears above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.menu-links{
+    padding-right: 10px;
+    text-align: center;
+}
+/* Navigation Links */
+.nav-bar ul {
+    display: flex; /* Align links horizontally */
+    list-style: none; /* Remove bullets */
+    margin-left: auto; /* Push links to the right */
+}
+
+.nav-bar li {
+    margin: 0 15px; /* Space between links */
+}
+
+.nav-bar .a1 {
+    color: rgba(20, 15, 87, 0.475);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-bar .a1:hover {
+    color: #052dc0; /* Change color on hover */
+}
+/* Off-screen menu styling */
+.off-screen-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen initially */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(2, 3, 5, 0.471); /* Blue tint for visibility */
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 20px;
+    z-index: 100; /* Ensure menu is above other elements */
+}
+
+/* Off-screen menu list */
+.off-screen-menu ul {
+    list-style: none; /* Remove bullets */
+    width: 100%; /* Full width */
+}
+
+/* Off-screen menu list items */
+.off-screen-menu li {
+    margin: 15px 0; /* Space between items */
+    width: 100%; /* Full width for clickable area */
+    text-align: left; /* Align text to the left */
+}
+/* Link styles */
+.a1 {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding: 10px; /* Add padding for better touch targets */
+    display: block; /* Make link fill the list item */
+}
+
+.a1:hover {
+    color: #052dc0; /* Change color on hover */
+}
+.menu-links{
+    display: flex;
+    list-style: none;
+}
+.menu-links li {
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px;
+}
+.menu-links li {
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px;
+}
+.menu-links li:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+.a2 {
+    color: #0b243f ;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    padding: 10px; /* Add padding for better touch targets */
+    display: block; /* Make link fill the list item */
+}
+
+.a2:hover {
+    color: whitesmoke; /* Change color on hover */
+}
+/* Hamburger menu styling */
+.ham-menu {
+    display: block; /* Show hamburger menu by default */
+    cursor: pointer;
+    z-index: 300; /* Higher than menu to stay on top */
+    position: relative;
+    background-color: rgba(242, 242, 248, 0); /* Red tint for visibility */
+}
+
+/* Hamburger icon styling */
+.ham-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Menu active state */
+.menu-active {
+    left: 0; /* Slide the menu into view */
+    z-index: 150;
+}
+/* Cross (hamburger icon active state) */
+.ham-active span:nth-child(1) {
+    opacity: 0;
+}
+.ham-active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-active span:nth-child(3) {
+    opacity: 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+header {
+    position: relative;
+    background: url('/images/istockphoto-1146707351-612x612.jpg') no-repeat center center/cover;
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+    min-height: 300px; /* Ensures it covers enough vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px) brightness(0.5); /*Subtle blur + dim effect*/
+    background: rgba(255, 255, 255, 0.056); /* Very light overlay */
+    z-index: 1;
+}
+
+header h1, header h2 {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for readability */
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Light shadow */
+}
+
+
+section {
+    padding: 30px;
+    margin: 20px 0;
+}
+
+#initiatives, #subsidies, #case-studies {
+    background-color: #e6f2ff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card, .case-study, .infographic{
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 15px 0;
+    background-color: white;
+    transition: transform 0.2s;
+}
+.infographic {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+.card:hover, .infographic:hover, .case-study:hover {
+    transform: scale(1.02);
+}
+footer {
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+footer a {
+    color: #c6cdd8;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+/* Media Query for smaller screens */
+@media (max-width: 1499px) {
+    .nav-bar ul {
+        display: none; /* Hide menu items on smaller screens */
+    }
+
+    .ham-menu {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+/* Media Query for larger screens */
+@media (min-width: 1500px) {
+    .off-screen-menu {
+        display: none; /* Ensure off-screen menu is hidden */
+    }
+
+    .ham-menu {
+        display: none; /* Hide the hamburger icon */
+    }
+
+    .nav-bar ul {
+        display: flex; /* Show nav links horizontally */
+    }
+}

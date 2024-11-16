@@ -1,0 +1,570 @@
+/* Basic styling and reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+    background-color: #a2d7f843;
+}
+
+/* Resetting styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Navigation bar */
+.nav-bar {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center vertically */
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    padding: 10px; /* Padding for aesthetics */
+    position: sticky; /* For positioning */
+    top: 0;
+    z-index: 100; /* Ensure it appears above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Title Styling */
+.main-title {
+    font-size: 28px; /* Adjusted size for nav */
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    margin: 0 20px; /* Space around the title */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+    text-align: center;
+}
+.logo{
+    height: 50px; /* Adjust height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Links */
+.nav-bar ul {
+    display: flex; /* Align links horizontally */
+    list-style: none; /* Remove bullets */
+    margin-left: auto; /* Push links to the right */
+    gap: 10px;
+    text-align: center;
+}
+.menu-links{
+    padding-right: 30px;
+}
+.menu-links li {
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px;
+}
+.menu-links li:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+.nav-bar li {
+    margin: 0 15px; /* Space between links */
+}
+
+
+/* Off-screen menu styling */
+.off-screen-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden off-screen initially */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(2, 3, 5, 0.471); /* Blue tint for visibility */
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 20px;
+    z-index: 100; /* Ensure menu is above other elements */
+}
+
+/* Off-screen menu list */
+.off-screen-menu ul {
+    list-style: none; /* Remove bullets */
+    width: 100%; /* Full width */
+}
+
+/* Off-screen menu list items */
+.off-screen-menu li {
+    margin: 15px 0; /* Space between items */
+    width: 100%; /* Full width for clickable area */
+    text-align: left; /* Align text to the left */
+}
+
+/* Link styles */
+.a1 {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding: 10px; /* Add padding for better touch targets */
+    display: block; /* Make link fill the list item */
+}
+
+.a1:hover {
+    color: #0bd2e4; /* Change color on hover */
+}
+
+.a2 {
+    color: #0b243f ;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    display: block; /* Make link fill the list item */
+}
+
+.a2:hover {
+    color: whitesmoke; /* Change color on hover */
+}
+
+/* Hamburger menu styling */
+.ham-menu {
+    display: block; /* Show hamburger menu by default */
+    cursor: pointer;
+    z-index: 300; /* Higher than menu to stay on top */
+    position: relative;
+    background-color: rgba(242, 242, 248, 0); /* Red tint for visibility */
+}
+
+/* Hamburger icon styling */
+.ham-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Menu active state */
+.menu-active {
+    left: 0; /* Slide the menu into view */
+    z-index: 150;
+}
+
+/* Cross (hamburger icon active state) */
+.ham-active span:nth-child(1) {
+    opacity: 0;
+}
+.ham-active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-active span:nth-child(3) {
+    opacity: 0;
+}
+
+
+/* Hero Section with Parallax Effect */
+.hero {
+    background-image: url("/images/background\ rain.jpg");
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.split-p{
+    font-family: sans;
+}
+
+/* Split Screen Sections */
+.split-screen {
+    display: flex;
+    min-height: 60vh;
+}
+
+.split-left, .split-right {
+    flex: 1;
+    padding: 40px;
+    font-family: sans-serif;
+}
+
+.split-left {
+    /* background-color: #42aaea6d; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-right img {
+    width: 100%;
+    height: auto;
+}
+
+.reverse .split-left {
+    order: 2;
+}
+
+.reverse .split-right {
+    order: 1;
+}
+
+
+/* Parallax Section */
+.parallax {
+    background-image: url(/images/parallax\ background.jpg);
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, -10px, 0);
+    transition: transform 0.3s ease;
+}
+
+.parallax-text {
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* Optional Scaling Animation for Parallax Effect */
+@keyframes parallaxScroll {
+    0% { background-position: center; }
+    50% { background-position: center 5px; } /* Slight shift */
+    100% { background-position: center; }
+}
+
+.parallax, .hero {
+    animation: parallaxScroll 5s infinite alternate ease-in-out;
+}
+/* General Parallax Styling */
+.parallax, .hero {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center 0;
+    will-change: background-position;
+    transition: background-position 0.1s linear;
+}
+
+/* Adjust for Very Large Screens */
+@media (min-width: 1600px) {
+    .parallax, .hero {
+        background-attachment: scroll; /* Avoid 'fixed' if it feels too fast */
+    }
+}
+@media (max-width: 768px) {
+    .parallax, .hero {
+        background-attachment: scroll;
+        }
+}
+
+
+/* stat section  */
+.stat-item {
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.counter {
+    font-weight: bold;
+    font-size: 32px;
+    color: #037bb8;
+}
+.stat-h2{
+    text-align: center;
+}
+
+/* Feedback Section Styling */
+.feedback-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f1f1f1;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+.feedback-left {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.feedback-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Form Styling */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.feedback-form textarea {
+    resize: none;
+}
+/* Initial state of fade-in elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Show state when element is in view */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /*Slight zoom*/
+}
+
+.submit-btn:focus,
+.contact-item a:focus {
+    outline: 2px solid #00c6ff;
+}
+
+/* Scroll-to-top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0fadfc7c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 100px;
+    font-size: 20px;
+    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-top-btn:hover {
+    background-color: #037bb8;
+    transform: scale(1.1);
+}
+
+/* Enhanced Contact and Social Media Section */
+.contact-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0a0f40, #00c6ff);
+    border-radius: 12px;
+    margin: 40px 0;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Contact Details */
+.contact-container {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.contact-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #00ffcc;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item:hover {
+    transform: scale(1.1);
+}
+
+.contact-item a:hover {
+    color: #00c6ff;
+}
+
+
+/* Social Media Section */
+.social-media-container {
+    flex: 1;
+    min-width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    background-color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icon i {
+    font-size: 28px;
+    color: #0a0f40;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    background-color: #34a2c087;
+}
+
+.social-icon.fb:hover i { color: #245bd0; }
+.social-icon.twitter:hover i { color: #1da1f2; }
+.social-icon.insta:hover i { color: #e1306c; }
+.social-icon.linkedin:hover i { color: #0077b5; }
+
+.icon-img{
+    height: 60px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contact-social {
+        flex-direction: column;
+    }
+
+    .contact-container, .social-media-container {
+        min-width: 100%;
+        margin: 10px 0;
+    }
+}
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0fadfc, #037bb8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+/* Media Query for smaller screens */
+@media (max-width: 1499px) {
+    .nav-bar ul {
+        display: none; /* Hide menu items on smaller screens */
+    }
+
+    .ham-menu {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+/* Media Query for larger screens */
+@media (min-width: 1500px) {
+    .off-screen-menu {
+        display: none; /* Ensure off-screen menu is hidden */
+    }
+
+    .ham-menu {
+        display: none; /* Hide the hamburger icon */
+    }
+
+    .nav-bar ul {
+        display: flex; /* Show nav links horizontally */
+    }
+}
+
